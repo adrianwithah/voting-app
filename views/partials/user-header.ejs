@@ -1,0 +1,15 @@
+<nav>
+	<div id="nav-div" class="nav-wrapper">
+		<a href="#" id="header-title">VOTING APP</a>
+		<ul class="right">
+			<li class="<%= active === "home" ? "active" : "" %>"><a href="/">HOME</a></li>
+			<li class="<%= active === "mypolls" ? "active" : "" %>"><a href="/mypolls">MY POLLS</a></li>
+			<li class="<%= active === "newpoll" ? "active" : "" %>"><a href="/newpoll">NEW POLL</a></li>
+			<li>
+				<button id="logout-button" class="waves-effect waves-light btn" type="submit" form="logout-form">LOGOUT</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+<form action="/logout" method="POST" id="logout-form">
+</form>

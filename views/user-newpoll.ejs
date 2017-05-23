@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+		<link rel="stylesheet" href="/stylesheets/header.css">
+		<link rel="stylesheet" href="/stylesheets/user-newpoll.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<header>
+		<%- include("partials/user-header",{active: "newpoll"}); %>
+	</header>
+	<body>
+		<div id="create-poll-div">
+			<form action="/newpoll" method="POST" id="newpoll-form" enctype="multipart/form-data" onSubmit="disableFormButtons()">
+				<div class="input-field" id="poll-title-div">
+					<input id="poll-title-field" type="text" class="poll-input" name="poll-title" required></input>
+					<label for="poll-title-field">Poll Title</label>
+				</div>
+				<div class="option-container">
+					<div class="input-field">
+						<input type="text" class="poll-input" name="poll-option" required></input>
+						<label>Option</label>
+					</div>
+					<button class="delete-option-button btn" onClick="removeSelf.bind(this.parentNode)()"><i class="material-icons">delete</i></button>
+				</div>
+				<div class="option-container">
+					<div class="input-field">
+						<input type="text" class="poll-input" name="poll-option" required></input>
+						<label>Option</label>
+					</div>
+					<button class="delete-option-button btn" onClick="removeSelf.bind(this.parentNode)()"><i class="material-icons">delete</i></button>
+				</div>
+			</form>
+			<div id="newpoll-buttons-div">
+				<button id="addoption-button" class="btn">Add Option</button>
+				<button id="createpoll-button" class="btn" form="newpoll-form" type="submit">Create Poll</button>
+			</div>
+		</div>
+	</body>
+	<script src="/scripts/user-newpoll.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+</html>

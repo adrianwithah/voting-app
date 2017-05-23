@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+		<link rel="stylesheet" href="/stylesheets/header.css">
+		<link rel="stylesheet" href="/stylesheets/user-mypolls.css">
+	</head>
+	<header>
+		<%- include("partials/user-header",{active: "mypolls"}); %>
+	</header>
+	<body>
+		<div id="mypolls-content-div">
+			<h3><u>List Of Polls</u></h3>
+			<div id="poll-list-div" class="collection">
+			<% for (var i=0;i<polls.length;i++) { %>
+				<a href="/poll/<%= polls[i]._id %>" target="_blank" class="collection-item list-item"><%= polls[i].pollTitle %></a>
+			<% } %>
+			</div>
+		</div>
+	</body>
+</html>

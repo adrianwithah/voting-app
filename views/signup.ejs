@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+		<link rel="stylesheet" href="/stylesheets/header.css">
+		<link rel="stylesheet" href="/stylesheets/signup.css">
+	</head>
+	<header>
+		<%- include("partials/public-header",{active: "signup"}); %>
+	</header>
+	<body>
+		<div id="signup-content-div">
+			<form action="/signup" method="POST" name="signup-form" id="signup-form" onSubmit="return validateSignUp()">
+				<div class="input-field">
+					<% if (error) { %>
+					<input id="username-field" type="text" name="username" class="invalid" onFocus="removeErrorPrompt()" required>
+					<% } else { %>
+					<input id="username-field" type="text" name="username" required>
+					<% } %>
+					<label for="username-field">Username</label>
+				</div>
+				<% if (error) { %>
+				<div id="error-message-div">
+					<p id="error-message">Username already in use!</p>
+				</div>
+				<% } %>
+				<div class="input-field">
+					<input id="password-field" type="password" name="password" required>
+					<label for="password-field">Password</label>
+				</div>
+				<div class="input-field">		
+					<input id="confirmpassword-field" type="password" name="confirm-password" required>
+					<label for="confirmpassword-field">Confirm Password</label>
+				</div>
+				<div>
+					<button id="signup-button" type="submit" class="btn">Sign Up</button>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script src="/scripts/signup.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+</html>

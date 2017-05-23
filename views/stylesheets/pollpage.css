@@ -1,0 +1,37 @@
+#poll-booth {
+	display: flex;
+	justify-content: center;
+}
+#poll-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	margin: 20px;
+	padding: 30px;
+}
+#poll-details {
+	display: flex;
+}
+#form-div {
+	margin-right: 50px;
+}
+#poll-button {
+	margin-top: 40px;
+}
+#poll-chart {
+	height: 400px;
+	width: 400px;
+}
+#new-option-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#new-poll-option-text {
+	height: 1.5em;
+	margin: 25px 0px 0px 10px;
+}
+#deletepoll-button {
+	margin-top: 50px;
+}

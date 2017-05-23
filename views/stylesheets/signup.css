@@ -1,0 +1,18 @@
+#signup-content-div {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+}
+#signup-form {
+	width: 30%;
+}
+#signup-button {
+	margin-top: 30px;
+}
+.show-error {
+	margin-bottom: 50px;
+}
+#error-message {
+	margin: 0px;
+	color: red;
+}

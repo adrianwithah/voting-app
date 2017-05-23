@@ -1,0 +1,10 @@
+exports.findByUsername = require("./utils.js").findByUsername;
+exports.findById = require("./utils.js").findById;
+exports.insertNewPoll = require("./utils.js").insertNewPoll;
+exports.findPollById = require("./utils.js").findPollById;
+exports.getAllPolls = require("./utils.js").getAllPolls;
+exports.findPollsByOwner = require("./utils.js").findPollsByOwner;
+exports.insertNewUser = require("./utils.js").insertNewUser;
+exports.updatePoll = require("./utils.js").updatePoll;
+exports.deletePoll = require("./utils.js").deletePoll;
+exports.isValidObjectId = require("./utils.js").isValidObjectId;

@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+		<link rel="stylesheet" href="/stylesheets/header.css">
+		<link rel="stylesheet" href="/stylesheets/login.css">
+	</head>
+	<header>
+		<%- include("partials/public-header", {active: "login"}); %>
+	</header>
+	<body>
+		<div id="login-content-div">
+			<form id="login-form" action="/login" method="POST">
+				<div class="input-field">
+					<input id="username-field" type="text" name="username" onFocus="removeErrorPrompt()" required>
+					<label for="username-field">Username</label>
+				</div>
+				<div class="input-field">
+					<input id="password-field" type="password" name="password" onFocus="removeErrorPrompt()" required>
+					<label for="password-field">Password</label>
+				</div class="input-field">
+				<% if (error) { %>
+				<div id="error-message-div">
+					<p id="error-message">Log in failed!</p>
+				</div>
+				<% } %>
+				<div>
+					<button form="login-form" type="submit" class="btn" id="login-button">Log In</button>
+				</div>
+			</form>
+		</div>
+		<script src="/scripts/login.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	</body>
+</html>

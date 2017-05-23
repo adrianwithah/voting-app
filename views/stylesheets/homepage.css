@@ -1,0 +1,8 @@
+#homepage-content-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#poll-list-div {
+	width: 60%;
+}

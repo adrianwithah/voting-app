@@ -1,0 +1,14 @@
+h1 {
+	color: blue;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+}
+header > div {
+	margin-left:auto;
+}
+header > div > button {
+	height: 1em;
+	width: 1em;
+}

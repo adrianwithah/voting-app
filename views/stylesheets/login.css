@@ -1,0 +1,18 @@
+#login-content-div {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+}
+#login-form {
+	width: 30%;
+}
+#login-button {
+	margin-top: 30px;
+}
+.show-error {
+	margin-bottom: 50px;
+}
+#error-message {
+	margin: 0px;
+	color: red;
+}

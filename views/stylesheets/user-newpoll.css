@@ -1,0 +1,28 @@
+#create-poll-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px 0px 150px 0px;
+}
+#newpoll-form {
+	width: 30%;
+}
+#poll-title-div {
+	margin-right: 70px;
+}
+.option-container {
+	display: flex;
+	align-items: center;
+}
+.option-container > div {
+	flex-grow: 1;
+}
+.delete-option-button {
+	display: flex;
+	justify-content: center;
+	width: 60px;
+	margin-left: 10px;
+}
+#newpoll-buttons-div {
+	margin-top: 50px;
+}

@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+		<link rel="stylesheet" href="/stylesheets/pollpage.css">
+		<link rel="stylesheet" href="/stylesheets/header.css">
+	</head>
+	<header>
+		<% if (public) { %>
+		<%- include("partials/public-header",{active: "null"}); %>
+		<% } else { %>
+		<%- include("partials/user-header",{active: "null"}); %>
+		<% } %>
+	</header>
+	<body>
+		<div id="poll-booth">
+			<div id="poll-card" class="card">
+				<div id="poll-details">
+					<div id="form-div">
+						<span class="card-title"><%=pollDetails.pollTitle%></span>
+						<form id="poll-form" method="POST" action="/vote/<%= pollDetails._id %>" onSubmit="return validateForm()">
+							<% var optionsLength = pollDetails.options.length %>
+							<% for(var i=0;i<optionsLength;i++) {%>
+							<div class="input-field">
+								<input type="radio" name="poll-option" id="poll-<%= i %>" value="old <%= pollDetails.options[i].optionTitle %>"></input>
+								<label for="poll-<%= i %>"><%= pollDetails.options[i].optionTitle %></label>
+							</div>
+							<% } %>
+							<% if (!public) { %>
+							<div id="new-option-div" class="input-field">
+								<input type="radio" name="poll-option" id="new-poll-option"  value=""></input>
+								<label for="new-poll-option">Other</label>
+								<input type="text" id="new-poll-option-text" onchange="editNewPollOption()"></input>
+							</div>
+							<% } %>
+							<div>
+								<button id="poll-button" type="submit" class="waves-effect waves-light btn">Poll</button>
+							</div>
+						</form>
+					</div>
+					<div id="poll-chart-div">
+					</div>
+				</div>
+				<% if (!public && username === pollDetails.owner.username) { %>
+				<div>
+					<button id="deletepoll-button" onclick="deletePoll(<%= JSON.stringify(pollDetails) %>)" class="waves-effect waves-light btn">Delete Poll</button>
+				</div>
+				<% } %>
+			</div>
+		</div>
+		<script>var pollDetails = <%- JSON.stringify(pollDetails) %>;</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+		<script src="/scripts/pollpage.js"></script>
+	</body>
+</html>
